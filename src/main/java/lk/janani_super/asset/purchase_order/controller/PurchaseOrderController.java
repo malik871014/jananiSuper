@@ -128,7 +128,7 @@ public class PurchaseOrderController {
             if (purchaseOrderSaved.getSupplier().getContactOne() != null) {
                 try {
                     String mobileNumber = purchaseOrderSaved.getSupplier().getContactOne().substring(1, 10);
-                    twilioMessageService.sendSMS("+94" + mobileNumber, "There is immediate PO from " +
+                    twilioMessageService.sendSMS("+94" + mobileNumber, "There is Purchase Order from " +
                             "Janani Super \nPlease Check Your Email Form Further Details");
                 } catch (Exception e) {
                     e.printStackTrace();

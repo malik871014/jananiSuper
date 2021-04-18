@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class TwilioMessageService {
     // Find your Account Sid and Token at twilio.com/user/account
     public static final String ACCOUNT_SID = "AC4a1cb6c461dbc4884b395969797daac5";
-    public static final String AUTH_TOKEN = "d2849ade979ee26c199565e5c6c12f83";
+    public static final String AUTH_TOKEN = "8a8161b987d2aeaab8105f99d723737f";
 
 
     public void sendSMS(String number, String messageBody) throws Exception{
