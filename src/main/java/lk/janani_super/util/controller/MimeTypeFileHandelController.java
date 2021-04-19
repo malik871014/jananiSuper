@@ -58,7 +58,8 @@ public class MimeTypeFileHandelController {
     public void showImage(@RequestParam("id") int imageId,HttpServletRequest request, HttpServletResponse response)
             throws IOException {
 
-        // Item item = itemService.get(itemId); --> contained class object
+        //
+        Item item = itemService.get(itemId); --> contained class object
         response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
         // response.getOutputStream().write(item.getItemImage()); need to get image where store it
 
