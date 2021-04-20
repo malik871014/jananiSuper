@@ -356,9 +356,6 @@
         </form >
     </div >
 </div >
-</main>
-</div>
-</div>
 <input type="hidden" data-th-value="${ledgerItemURL}" id="ledgerItemURL" >
 <!--/* footer is */-->
 <div data-th-replace="~{fragments/footer :: footerFragment}" ></div >
@@ -524,7 +521,7 @@
     }
 
     //modal total mount calculate
-    $("#requestCount").bind('keyup keydown change', function () {
+    $("#requestCount").bind('keyup', function () {
         totalPriceCard();
     });
 
@@ -593,7 +590,8 @@
     }
 
     $("#amountTendered").bind('keyup', function () {
-        if(!$("discountRatio").val()){
+
+        if(!$("#discountRatio").val()){
             swal({
                 title: "Please Select Discount",
                 icon: "warning",
