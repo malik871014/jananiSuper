@@ -143,7 +143,7 @@ public class InvoiceController {
     if ( saveInvoice.getCustomer() != null ) {
       try {
         String mobileNumber = saveInvoice.getCustomer().getMobile().substring(1,10);
-        twilioMessageService.sendSMS("+94"+mobileNumber, "Thank You Come Again \n Samarasinghe Super ");
+        twilioMessageService.sendSMS("+94"+mobileNumber, "Thank You & Come Again \n Janani Super ");
       } catch ( Exception e ) {
         e.printStackTrace();
       }

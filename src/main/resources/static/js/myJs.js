@@ -37,15 +37,17 @@ $(document).ready(function () {
     });
 
 
-
 });
 
 
 // regex
-let nicRegex = /^([0-9]{9}[vV|xX])|^([0-9]{12})$/;
+let officeEmailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+let addressRegex = /^[0-9a-zA-Z\s,-,/]+$/;
+let nicRegex = /^([0-9]{9}[|X|V]|[0-9]{12})$/;
 let mobileRegex = /^([0][7][\d]{8}$)|^([7][\d]{8})$/;
 let landRegex = /^0((11)|(2(1|[3-7]))|(3[1-8])|(4(1|5|7))|(5(1|2|4|5|7))|(6(3|[5-7]))|([8-9]1))([2-4]|5|7|9)[0-9]{6}$/;
-let nameRegex = /^[a-zA-Z .-]{3}[ a-zA-Z.-]+$/;
+let callingNameRegex = /^[A-Za-z\\s]+$/;
+let nameRegex = /^[a-zA-Z.-]{3}[ a-zA-Z.-]+$/;
 let numberRegex = /^([eE][hH][sS][\d]+)$/;
 let invoiceNumberRegex = /^[0-9]{10}$/;
 
@@ -233,6 +235,25 @@ $(".fax").bind("keyup", function () {
 let mobileValidate = function (val) {
     let mobile = $(val).val();
     if (mobileRegex.test(mobile)) {
+        backgroundColourChangeGood(val);
+    } else if (mobile.length === 0) {
+        backgroundColourChangeNothingToChange(val);
+    } else {
+        backgroundColourChangeBad(val);
+    }
+};
+
+// validate both mobile and land
+
+let bothLandMobile = /^([0][7][0|1|2|4|5|6|7|8][\d]{7}$)|^([7][0|1|2|4|5|6|7|8][\d]{7})|0((11)|(2(1|[3-7]))|(3[1-8])|(4(1|5|7))|(5(1|2|4|5|7))|(6(3|[5-7]))|([8-9]1))([2-4]|5|7|9)[0-9]{6}$/;
+
+$(".mobileAndLand").bind("keyup", function () {
+    bothLandAndMobile($(this));
+});
+
+let bothLandAndMobile = function (val) {
+    let mobile = $(val).val();
+    if (bothLandMobile.test(mobile)) {
         backgroundColourChangeGood(val);
     } else if (mobile.length === 0) {
         backgroundColourChangeNothingToChange(val);
