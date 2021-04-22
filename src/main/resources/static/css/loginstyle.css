@@ -107,9 +107,15 @@
     cursor: pointer;
     background: #03f4ac;
     color: #000;
-
 }
 
+#errorLogin{
+    color: white;
+    margin-bottom: 10px;
+    font-family: "Times New Roman";
+    font-weight: bold;
+    text-align: center;
+}
 
 
     

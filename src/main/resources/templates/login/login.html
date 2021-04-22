@@ -24,8 +24,8 @@
             <button id="btnLogin" class="col-md-12 btn btn-primary"><i class= "fa fa-key" style="margin-right: 10px;font-size: 18px"></i>Login</button>
         </div>
 
-        <div class="container-fluid " th:if="${param.error}">
-            <p class="bg-white text-capitalize text-danger text-lg-center">Invalid username or password. </p>
+        <div class="container-fluid " th:if="${param.error}" id="errorLogin">
+            <p class="bg-white text-capitalize text-danger text-lg-center"></br>Invalid username or password. </p>
         </div>
         <div class="container-fluid ">
             <p id="errorMessage" th:text="${err}" class="bg-white text-capitalize text-danger text-lg-center"></p>
